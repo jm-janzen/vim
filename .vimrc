@@ -4,6 +4,8 @@ set background=dark
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 
+set list lcs=trail:☹
+
 filetype plugin on
 filetype indent on
 set number
