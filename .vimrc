@@ -100,6 +100,11 @@ autocmd FileType *.sh call Bash_conf()
     function Bash_conf()
         source ${HOME}/.vimrc.dir/macros_bash.vim
     endfunction
+autocmd FileType *.go call Go_conf()
+    function Go_conf()
+        source ${HOME}/.vimrc.dir/macros_go.vim
+    endfunction
+
 
 " set explicit tab character for .at files:
 syntax on
