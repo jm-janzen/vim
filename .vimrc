@@ -88,7 +88,7 @@ let xml_syntax_folding=1      " XML
 " load filetype generic macros
 source ${HOME}/.vimrc.dir/macros_all.vim
 
-au BufNewFile,BufRead,FileType *.js call Javascript_conf()
+au BufNewFile,BufRead,FileType *.js* call Javascript_conf()
     function Javascript_conf()
         source ${HOME}/.vimrc.dir/macros_javascript.vim
     endfunction
@@ -105,6 +105,7 @@ autocmd FileType *.go call Go_conf()
         source ${HOME}/.vimrc.dir/macros_go.vim
     endfunction
 
+" TODO add less syn
 
 " set explicit tab character for .at files:
 syntax on
