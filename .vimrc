@@ -1,3 +1,8 @@
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+let g:jsx_ext_required = 0
+
 set t_Co=256 " more colours
 colorscheme maroloccio
 set background=dark
@@ -16,6 +21,7 @@ set hlsearch    "highlight search results
 set shiftround  "shift to set columns rather than relative
 set si
 "set mouse=a     "enable mouse selecting (visual mode)
+set cursorline  " highlight current line (expensive)
 
 "hi,
 "here is a basic .vimrc that you can choose to use if you like.  use all/part/none of it up to you.
