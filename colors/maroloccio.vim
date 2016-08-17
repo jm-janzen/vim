@@ -80,7 +80,7 @@ hi CursorColumn guifg=NONE guibg=#2c3138 guisp=#2c3138 gui=NONE ctermfg=NONE cte
 hi Define guifg=#5d5d5d guibg=NONE guisp=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
 hi Function guifg=#5d5d5d guibg=NONE guisp=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
 hi PreProc guifg=#5d5d5d guibg=NONE guisp=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
-hi Visual guifg=#0e1219 guibg=#464646 guisp=#464646 gui=NONE ctermfg=234 ctermbg=238 cterm=NONE
+hi Visual guifg=#0e1219 guibg=#464646 guisp=#464646 gui=NONE ctermfg=0 ctermbg=5 cterm=NONE
 hi VertSplit guifg=#2c3138 guibg=#a2a2a2 guisp=#a2a2a2 gui=NONE ctermfg=237 ctermbg=247 cterm=NONE
 hi Exception guifg=#5d5d5d guibg=NONE guisp=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
 hi Keyword guifg=#5d5d5d guibg=NONE guisp=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
