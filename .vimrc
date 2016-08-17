@@ -1,6 +1,8 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+
+" enable JSX syntax in *.js files, too
 let g:jsx_ext_required = 0
 
 set t_Co=256 " more colours
