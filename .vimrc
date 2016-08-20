@@ -97,6 +97,10 @@ au BufNewFile,BufRead,FileType *.js* call Javascript_conf()
     function Javascript_conf()
         source ${HOME}/.vimrc.dir/macros_javascript.vim
     endfunction
+au BufNewFile,BufRead,FileType *.jsx call ReactJSX_conf()
+    function ReactJSX_conf()
+        source ${HOME}/.vimrc.dir/macros_reactjsx.vim
+    endfunction
 autocmd FileType c[pp]* call Cpp_conf()
     function Cpp_conf()
         source ${HOME}/.vimrc.dir/macros_cpp.vim
