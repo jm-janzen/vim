@@ -5,6 +5,9 @@ filetype plugin indent on
 " enable JSX syntax in *.js files, too
 let g:jsx_ext_required = 0
 
+" enable XML tag matching
+runtime macros/matchit.vim
+
 set t_Co=256 " more colours
 colorscheme maroloccio
 set background=dark
