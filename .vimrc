@@ -65,6 +65,8 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 nnoremap <silent> <C-g> :echo expand('%:p')<CR><C-g>
 nnoremap <silent> <C-h> :echo expand('%:{getcwd()}')<CR><C-g>
 
+" make debugging python scripts a little less painless
+nnoremap <silent> <F5> :!clear;python3.5 %<CR>
 """"""""""""""""""""""""""""""
 " => Status line
 """"""""""""""""""""""""""""""
