@@ -1,5 +1,13 @@
+" pathogen, load plugins in ~/.vim/bundle/
 execute pathogen#infect()
+
+" allow syntax highlighting
 syntax on
+
+" turn on:
+"   1) Filetype detection
+"   2) Use filetype plugins
+"   3) Use filetype specific indenting
 filetype plugin indent on
 
 " enable JSX syntax in *.js files, too
@@ -8,26 +16,27 @@ let g:jsx_ext_required = 0
 " enable XML tag matching
 runtime macros/matchit.vim
 
-set t_Co=256 " more colours
-" in case t_Co alone doesn't work, add this as well:
-let &t_AB="\e[48;5;%dm"
-let &t_AF="\e[38;5;%dm"
+" try really hard to allow 256 colos
+set t_Co=256
+" in case above didn't work
+let &t_AB="\e[48;5;%dm" " set bg colo (ANSI)
+let &t_AF="\e[38;5;%dm" " set fg colo (ANSI)
 
+" default colorscheme
 colorscheme maroloccio
+
+" we use a dark terminal background provide appropriate colours
 set background=dark
+
+" support transparent bg - TODO just load all these in auto func
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 
+" show training whitespace as `-', and tabs as `>---'
 set list lcs=trail:-,tab:>-
 
-filetype plugin on
-filetype indent on
-set number
-set smartindent
-
-set ruler       "always show current position
-set hlsearch    "highlight search results
-set shiftround  "shift to set columns rather than relative
+set hlsearch    " highlight search results
+set shiftround  " shift to set columns rather than relative
 set si          " use smartindent on new lines (see ':help smartindent')
 set ai          " use autoindent (copy indent from prev line on new line)
 set cursorline  " highlight current line (expensive)
@@ -36,17 +45,11 @@ set cursorline  " highlight current line (expensive)
 "here is a basic .vimrc that you can choose to use if you like.  use all/part/none of it up to you.
 " Ty
 
-" disable syntax highlighting
-"syntax off
-
 " ignore case during search
 set ignorecase
 
-" obey case if search pattern case
+" obey case if search pattern has uppercase
 set smartcase
-
-" we use a dark terminal background provide appropriate colours
-"set background=dark
 
 " shiftwidth is 4 @ sparq
 set shiftwidth=4
@@ -56,7 +59,7 @@ set tabstop=4
 set expandtab
 
 " fileformats=unix
-set ffs=unix 
+set ffs=unix
 
 " <Ctrl-n> to toggle line numbers
 map <C-n> :set nu!<CR>
@@ -73,32 +76,30 @@ nnoremap <silent> <F5> :!clear;python3.5 %<CR>
 " Always show the status line
 set laststatus=2
 
-" Format the status line
-" %F    path from home
-" %f    file
+" Format the status line (see ":help statusline")
+"   \       a space
+"   %F      path from home
+"   %f      path for file in buffer
+"   %m      modified? [+], not-modifiable? [-]
+"   %r      readonly? [RO]
+"   %h      is vim help? [help]
+"   %w      is preview? [Preview]
+"   %l      line
+"   %c      column
 set statusline=\ %F%m%r%h\ %w\ pos:\(%l,%c)
-"set statusline=\ %F%m%r%h\ %w\ CWD:\ %r%{getcwd()}/%f\ \ \ pos:\(%l,%c)\ \ \ %m%r
 
-"  code folding
+" code folding
 set foldmethod=manual
 set foldlevelstart=99 " open all folds on file open
-
-let javaScript_fold=1         " JavaScript
-let perl_fold=1               " Perl
-let php_folding=1             " PHP
-let r_syntax_folding=1        " R
-let ruby_fold=1               " Ruby
-let sh_fold_enabled=1         " sh
-let vimsyn_folding='af'       " Vim script
-let xml_syntax_folding=1      " XML
 
 """
 """ source macros
 """
 
-" load filetype generic macros
+" load filetype generic macros, settings
 source ${HOME}/.vimrc.dir/macros_all.vim
 
+" load filetype specific macros, settings
 au BufNewFile,BufRead,FileType *.js* call Javascript_conf()
     function Javascript_conf()
         source ${HOME}/.vimrc.dir/macros_javascript.vim
@@ -120,15 +121,12 @@ autocmd FileType *.go call Go_conf()
         source ${HOME}/.vimrc.dir/macros_go.vim
     endfunction
 
-" TODO add less syn
-
-" set explicit tab character for .at files:
-syntax on
-filetype on
+" syntax highlighting like HTML for EJS files
 au BufNewFile,BufRead *.ejs set filetype=html
-au BufNewFile,BufRead *.at set filetype=autotest
-autocmd Filetype autotest setlocal noexpandtab list
-autocmd BufNewFile,BufRead *.at, *.am, set set noic cin noexpandtab list
+
+" set explicit tab character for .at files
+au BufNewFile,BufRead *.a[tm], set noic cin noexpandtab list filetype=autotest
+au Filetype autotest setlocal noexpandtab list
 
 " set syntax for golang source files
 au BufNewFile,BufRead *.go set syn=go
