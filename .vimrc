@@ -28,8 +28,8 @@ set smartindent
 set ruler       "always show current position
 set hlsearch    "highlight search results
 set shiftround  "shift to set columns rather than relative
-set si
-"set mouse=a     "enable mouse selecting (visual mode)
+set si          " use smartindent on new lines (see ':help smartindent')
+set ai          " use autoindent (copy indent from prev line on new line)
 set cursorline  " highlight current line (expensive)
 
 "hi,
