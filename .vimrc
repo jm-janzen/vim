@@ -9,6 +9,10 @@ let g:jsx_ext_required = 0
 runtime macros/matchit.vim
 
 set t_Co=256 " more colours
+" in case t_Co alone doesn't work, add this as well:
+let &t_AB="\e[48;5;%dm"
+let &t_AF="\e[38;5;%dm"
+
 colorscheme maroloccio
 set background=dark
 highlight Normal ctermbg=NONE
