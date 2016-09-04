@@ -1,6 +1,9 @@
 " pathogen, load plugins in ~/.vim/bundle/
 execute pathogen#infect()
 
+" we use a dark terminal background provide appropriate colours
+set background=dark
+
 " allow syntax highlighting
 syntax on
 
@@ -16,17 +19,26 @@ let g:jsx_ext_required = 0
 " enable XML tag matching
 runtime macros/matchit.vim
 
+" force no background color on loading colo schemes (for transparent term emus)
+au ColorScheme * call NoBackground()
+function! NoBackground()
+    hi Normal ctermbg=none
+    hi Comment ctermbg=none
+    hi LineNr ctermbg=none
+    hi Folded ctermbg=none
+    hi NonText ctermbg=none
+    hi SpecialKey ctermbg=none
+    hi VertSplit ctermbg=none
+    hi SignColumn ctermbg=none
+    hi String ctermbg=none
+endfunction
+
 " try really hard to allow 256 colos
 set t_Co=256
-" in case above didn't work
-let &t_AB="\e[48;5;%dm" " set bg colo (ANSI)
-let &t_AF="\e[38;5;%dm" " set fg colo (ANSI)
 
 " default colorscheme
-colorscheme maroloccio
-
-" we use a dark terminal background provide appropriate colours
-set background=dark
+"colorscheme maroloccio
+colorscheme bink
 
 " support transparent bg - TODO just load all these in auto func
 highlight Normal ctermbg=NONE
