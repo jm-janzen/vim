@@ -306,6 +306,8 @@ elseif has("gui_running") || &t_Co == 256
 
     CSAHi Normal term=NONE cterm=NONE ctermbg=none ctermfg=243
 
+    CSAHi Braces term=NONE cterm=NONE ctermbg=none ctermfg=246
+
     CSAHi vimAutoCmdSpace term=NONE cterm=NONE ctermbg=none ctermfg=fg
     CSAHi vimEcho term=NONE cterm=NONE ctermbg=none ctermfg=fg
     CSAHi vimGlobal term=NONE cterm=NONE ctermbg=none ctermfg=fg
@@ -394,11 +396,14 @@ elseif has("gui_running") || &t_Co == 256
     CSAHi LineNr term=NONE cterm=NONE ctermbg=none ctermfg=237
     CSAHi CursorLineNr term=NONE cterm=NONE ctermbg=none ctermfg=242
     CSAHi Question term=NONE cterm=NONE ctermbg=none ctermfg=fg
-    CSAHi StatusLine term=NONE cterm=NONE ctermbg=232 ctermfg=246
+
+    CSAHi StatusLine term=NONE cterm=NONE ctermbg=244 ctermfg=232
+
     CSAHi StatusLineNC term=NONE cterm=NONE ctermbg=none ctermfg=242
+
     CSAHi VertSplit term=NONE cterm=NONE ctermbg=none ctermfg=236
     CSAHi Title term=NONE cterm=NONE ctermbg=none ctermfg=244
-    CSAHi Visual term=NONE cterm=NONE ctermbg=none ctermfg=fg
+    CSAHi Visual term=NONE cterm=NONE ctermbg=232 ctermfg=fg
     CSAHi vimSynMtchCchar term=NONE cterm=NONE ctermbg=none ctermfg=fg
     CSAHi vimPythonRegion term=NONE cterm=NONE ctermbg=none ctermfg=fg
     CSAHi vimAugroupSyncA term=NONE cterm=NONE ctermbg=none ctermfg=fg
@@ -418,9 +423,11 @@ elseif has("gui_running") || &t_Co == 256
     CSAHi vimFuncBody term=NONE cterm=NONE ctermbg=none ctermfg=fg
     CSAHi TabLineFill term=NONE cterm=NONE ctermbg=none ctermfg=fg
     CSAHi CursorColumn term=NONE cterm=NONE ctermbg=none ctermfg=fg
+
     CSAHi CursorLine term=NONE cterm=NONE ctermbg=232 ctermfg=fg
+
     CSAHi ColorColumn term=NONE cterm=NONE ctermbg=none ctermfg=fg
-    CSAHi MatchParen term=NONE cterm=NONE ctermbg=none ctermfg=fg
+    CSAHi MatchParen term=NONE cterm=NONE ctermbg=none ctermfg=255
     CSAHi Comment term=NONE cterm=NONE ctermbg=none ctermfg=237
     CSAHi Constant term=NONE cterm=NONE ctermbg=none ctermfg=244
     CSAHi Special term=NONE cterm=NONE ctermbg=none ctermfg=51
