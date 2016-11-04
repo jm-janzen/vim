@@ -1,5 +1,15 @@
-" pathogen, load plugins in ~/.vim/bundle/
-execute pathogen#infect()
+" the following are required to use vundle plugin manager
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'scrooloose/nerdtree'
+
+call vundle#end()
+filetype plugin indent on
+" end of vundle section
 
 " map leader to most prominent key
 let mapleader = "\<Space>"
