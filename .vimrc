@@ -6,6 +6,13 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'mbbill/undotree'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Rip-Rip/clang_complete'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call vundle#end()
 filetype plugin indent on
@@ -31,6 +38,8 @@ let g:jsx_ext_required = 0
 
 " for C-family semantic completion, syntax, compilation flags linting
 let g:ycm_global_ycm_extra_conf = '/home/jm/.vim/.ycm_extra_conf.py'
+" use clang_complete instead
+ "let g:clang_library_path='/usr/lib/llvm-3.8/lib/libclang-3.8.so.1'
 
 " add fzf to run-time-path (enable fuzzy finder)
 set rtp+=~/.fzf
@@ -127,6 +136,8 @@ nnoremap <C-s> :source $MYVIMRC<CR>
 
 " make debugging python scripts a little less painful
 nnoremap <silent> <F5> :!python3.4 %<CR>
+" don't auto-indent `#' comments to beginning of line
+inoremap # X#
 
 " shortcut to toggle :NERDTree plugin
 map <silent> <C-t> :NERDTreeToggle<CR>
