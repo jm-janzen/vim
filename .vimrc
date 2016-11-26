@@ -2,6 +2,7 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+let g:python_host_prog='/usr/bin/python2'
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
@@ -10,8 +11,10 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mbbill/undotree'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'Rip-Rip/clang_complete'
+Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plugin 'zchee/deoplete-jedi'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call vundle#end()
@@ -37,9 +40,11 @@ filetype plugin indent on
 let g:jsx_ext_required = 0
 
 " for C-family semantic completion, syntax, compilation flags linting
-let g:ycm_global_ycm_extra_conf = '/home/jm/.vim/.ycm_extra_conf.py'
+"let g:ycm_global_ycm_extra_conf = '/home/jm/.vim/.ycm_extra_conf.py'
 " use clang_complete instead
- "let g:clang_library_path='/usr/lib/llvm-3.8/lib/libclang-3.8.so.1'
+"let g:clang_library_path='/usr/lib/llvm-3.8/lib/libclang-3.8.so.1'
+" enable deoplete completion
+let g:deoplete#enable_at_startup = 1
 
 " add fzf to run-time-path (enable fuzzy finder)
 set rtp+=~/.fzf
