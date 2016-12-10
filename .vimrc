@@ -84,6 +84,7 @@ function! NoBackground()
     hi Repeat ctermbg=NONE
     hi Operator ctermbg=NONE
     hi Structure ctermbg=NONE
+    hi CursorLine ctermfg=NONE
 endfunction
 
 " try really hard to allow 256 colos
@@ -141,6 +142,11 @@ nnoremap <C-s> :source $MYVIMRC<CR>
 
 " make debugging python scripts a little less painful
 nnoremap <silent> <F5> :!python3.4 %<CR>
+
+" alt+w to toggle line wrapping
+nnoremap <M-w> :set wrap!<CR>
+
+" insert mode key maps
 " don't auto-indent `#' comments to beginning of line
 inoremap # X#
 
